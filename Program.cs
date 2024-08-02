@@ -19,6 +19,7 @@ namespace CS2PluginStarter
         private const string PathToDotnetExe = @"C:\Program Files\dotnet\dotnet.exe";
         private const string PluginFilename = "ExamplePlugin.dll";
         private const string PathToPluginProject = @"D:\Work\C#\Plugins\ExamplePlugin\ExamplePlugin.csproj";
+        private const string PathToServerStartBat = @"C:\CS2Server\server_debug.bat";
         private const string PathToCompiledRelease = @"D:\Work\C#\Plugins\ExamplePlugin\bin\Release\net8.0\";
         private const string PathToPluginsFolder = @"C:\CS2Server\server\game\csgo\addons\counterstrikesharp\plugins\ExamplePlugin\";
 
@@ -76,7 +77,7 @@ namespace CS2PluginStarter
             Console.WriteLine("Starting server...");
 
             var process = new Process();
-            var processStartInfo = new ProcessStartInfo("cmd.exe", @"/C C:\CS2Server\server_debug.bat")
+            var processStartInfo = new ProcessStartInfo("cmd.exe", @"/C " + PathToServerStartBat)
             {
                 RedirectStandardOutput = true,
                 UseShellExecute = false
